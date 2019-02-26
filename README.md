@@ -10,7 +10,7 @@ A [GitHub action](https://github.com/features/actions) that will export [Figma](
 
 ```workflow
 action "Export SVG from Figma" {
-  uses = "@primer/figma-action@1.0.0"
+  uses = "primer/figma-action@1.0.0"
   secrets = [
     "FIGMA_TOKEN"
   ]
