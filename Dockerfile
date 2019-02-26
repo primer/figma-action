@@ -9,10 +9,8 @@ LABEL repository="http://github.com/primer/figma-action"
 LABEL homepage="http://github.com/primer"
 LABEL maintainer="Jon Rohan <yes@jonrohan.codes>"
 
-# ADD entrypoint.js /entrypoint.js
 WORKDIR /
 COPY . /
 RUN npm install
 
 ENTRYPOINT [ "node", "/entrypoint.js" ]
-# ENTRYPOINT ["/entrypoint.js"]
