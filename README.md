@@ -24,6 +24,27 @@ action "Export SVG from Figma" {
 }
 ```
 
+**Example worklfow using yml**
+
+The below example syntax uses the new Github Actions, actions syntax
+
+```workflow
+name: Export SVG from Figma
+on: [push]
+jobs:
+  all:
+    name: Figma Export
+    runs-on: ubuntu-latest    
+    steps:
+      - uses: primer/figma-action@v1.0.0-alpha.2
+        with:
+          args: "format=svg outputDir=./build/"
+        env:
+          FIGMA_FILE_URL: "https://www.figma.com/file/ZFjrph2HUwFK8Q3uEtJIu1PT/youtfilename"
+          FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
+```
+
+
 ### Variables
 
 **Secrets**
