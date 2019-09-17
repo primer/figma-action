@@ -9,26 +9,6 @@ A [GitHub action](https://github.com/features/actions) that will export [Figma](
 **Example workflow**
 
 ```workflow
-action "Export SVG from Figma" {
-  uses = "primer/figma-action@1.0.0"
-  secrets = [
-    "FIGMA_TOKEN"
-  ]
-  env = {
-    "FIGMA_FILE_URL" = "https://www.figma.com/file/FP7lqd1V00L875zvdklkkZr/Design"
-  }
-  args = [
-    "format=svg",
-    "outputDir=./lib/build"
-  ]
-}
-```
-
-**Example worklfow using yml**
-
-The below example syntax uses the new Github Actions, actions syntax
-
-```workflow
 name: Export SVG from Figma
 on: [push]
 jobs:
@@ -44,14 +24,13 @@ jobs:
           FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
 ```
 
-
 ### Variables
 
 **Secrets**
 
 `FIGMA_TOKEN` **(required)**
 
-This token is used to access the [Figma API](https://www.figma.com/developers/docs#access-tokens). It's required to generate one so this action will work. It's recommended to set the token in a [secret token](https://developer.github.com/actions/creating-workflows/storing-secrets/) in your repository.
+This token is used to access the [Figma API](https://www.figma.com/developers/docs#access-tokens). It's required to generate one so this action will work. It's recommended to set the token in a [secret token](https://help.github.com/articles/virtual-environments-for-github-actions#creating-and-using-secrets-encrypted-variables) in your repository.
 
 **env variables**
 
