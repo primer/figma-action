@@ -54,10 +54,10 @@ The directory will look like this:
 ./outputDir/
   ├── format/
   |     └── componentName.format
-  └── build.json
+  └── data.json
 ```
 
-The build.json file will look like this:
+The data.json file will look like this:
 
 ```js
 {
