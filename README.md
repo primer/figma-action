@@ -20,7 +20,7 @@ jobs:
         with:
           args: "format=svg outputDir=./build/"
         env:
-          FIGMA_FILE_URL: "https://www.figma.com/file/ZFjrph2HUwFK8Q3uEtJIu1PT/youtfilename"
+          FIGMA_FILE_URL: "https://www.figma.com/file/ZFjrph2HUwFK8Q3uEtJIu1PT/yourfilename"
           FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
 ```
 
