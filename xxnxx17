@@ -1,0 +1,2 @@
+- name: Figma Action
+  uses: primer/figma-action@v1.0.0-alpha.2
