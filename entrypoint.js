@@ -48,9 +48,11 @@ client.file(fileId)
         const {name, id} = c
         const {description = '', key} = data.components[c.id]
         const {width, height} = c.absoluteBoundingBox
+        const filename = `${name.replace(/[^a-z0-9]/gi, '_').toLowerCase()}.${options.format}`;
 
         components[id] = {
           name,
+          filename,
           id,
           key,
           file: fileId,
@@ -107,7 +109,7 @@ client.file(fileId)
       })
       .then(response => {
         return ensureDir(join(options.outputDir, options.format))
-          .then(() => writeFile(join(options.outputDir, options.format, `${component.name}.${options.format}`), response.body, (options.format === 'svg' ? 'utf8' : 'binary')))
+          .then(() => writeFile(join(options.outputDir, options.format, component.filename), response.body, (options.format === 'svg' ? 'utf8' : 'binary')))
       })
     }))
   })
