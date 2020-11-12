@@ -4,6 +4,7 @@ const {join, resolve} = require('path')
 const Figma = require('figma-js')
 const {FIGMA_TOKEN, FIGMA_FILE_URL} = process.env
 const PQueue = require('p-queue')
+const sanitize = require("sanitize-filename")
 
 const options = {
   format: 'jpg',
@@ -48,9 +49,11 @@ client.file(fileId)
         const {name, id} = c
         const {description = '', key} = data.components[c.id]
         const {width, height} = c.absoluteBoundingBox
+        const filename = `${sanitize(name).toLowerCase()}.${options.format}`;
 
         components[id] = {
           name,
+          filename,
           id,
           key,
           file: fileId,
@@ -107,7 +110,7 @@ client.file(fileId)
       })
       .then(response => {
         return ensureDir(join(options.outputDir, options.format))
-          .then(() => writeFile(join(options.outputDir, options.format, `${component.name}.${options.format}`), response.body, (options.format === 'svg' ? 'utf8' : 'binary')))
+          .then(() => writeFile(join(options.outputDir, options.format, component.filename), response.body, (options.format === 'svg' ? 'utf8' : 'binary')))
       })
     }))
   })

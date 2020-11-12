@@ -20,9 +20,10 @@
   "author": "GitHub, Inc.",
   "license": "MIT",
   "dependencies": {
+    "figma-js": "^1.6.0",
     "fs-extra": "^7.0.0",
     "got": "^8.3.0",
     "p-queue": "^2.4.2",
-    "figma-js": "^1.6.0"
+    "sanitize-filename": "^1.6.3"
   }
 }
