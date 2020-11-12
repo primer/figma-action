@@ -1,6 +1,6 @@
 {
   "name": "@primer/figma-action",
-  "version": "1.0.0-alpha.2",
+  "version": "1.0.0-alpha.3",
   "description": "GitHub action for exporting figma components.",
   "scripts": {
     "start": "node entrypoint.js"
