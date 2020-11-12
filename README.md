@@ -14,9 +14,9 @@ on: [push]
 jobs:
   all:
     name: Figma Export
-    runs-on: ubuntu-latest    
+    runs-on: ubuntu-latest
     steps:
-      - uses: primer/figma-action@v1.0.0-alpha.2
+      - uses: primer/figma-action@v1.0.0-alpha.3
         with:
           args: "format=svg outputDir=./build/"
         env:
