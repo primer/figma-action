@@ -1,5 +1,7 @@
 # GitHub action for exporting Figma components
 
+> **NOTE**: This repository is no longer maintained.
+
 [![npm version](https://img.shields.io/npm/v/@primer/figma-action.svg)](https://www.npmjs.org/package/@primer/figma-action)
 
 A [GitHub action](https://github.com/features/actions) that will export [Figma](https://figma.com/) components from design files to your repository.
